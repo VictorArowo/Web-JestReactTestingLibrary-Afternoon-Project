@@ -27,17 +27,25 @@ describe('sum', () => {
 });
 
 describe('multiply', () => {
-  // write tests! <================================================
+  it('throws if anything other than a number is fed in', () => {
+    expect(() => helpers.multiply('1', 2)).toThrow();
+  });
+
+  it('multiplies two positive numbers correctly', () => {
+    expect(helpers.multiply(3, 4)).toBe(12);
+  });
+  it('multiplies two negative numbers correctly', () => {
+    expect(helpers.multiply(-3, -4)).toBe(12);
+  });
 });
 
 describe('personMaker', () => {
   it('makes a person with name and age', () => {
-    expect(helpers.personMaker('peter', 4))
-      .toMatchObject({
-        id: '123',
-        name: 'peter',
-        age: 4,
-      });
+    expect(helpers.personMaker('peter', 4)).toMatchObject({
+      id: '123',
+      name: 'peter',
+      age: 4
+    });
   });
 
   // write more tests! <===========================================
