@@ -47,8 +47,12 @@ describe('Counter component', () => {
 
   it('can reset the count clicking rest', () => {
     const resetButton = tools.queryByTestId('resetButton');
-
+    const incButton = tools.queryByTestId('incButton');
+    for (let i = 0; i < 10; i++) {
+      rtl.fireEvent.click(incButton);
+    }
     rtl.fireEvent.click(resetButton);
+
     expect(tools.queryByText(/0/)).toBeInTheDocument();
     expect(tools.queryByText(/^0/)).not.toBeInTheDocument();
   });

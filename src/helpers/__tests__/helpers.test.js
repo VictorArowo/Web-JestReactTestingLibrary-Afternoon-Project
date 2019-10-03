@@ -48,5 +48,9 @@ describe('personMaker', () => {
     });
   });
 
+  it('returns null if anything other than two arguments are passed in', () => {
+    expect(() => helpers.personMaker('arg')).toThrow();
+  });
+
   // write more tests! <===========================================
 });
