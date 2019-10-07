@@ -25,10 +25,12 @@ export function multiply(a, b) {
 }
 
 export function personMaker(name, age) {
+  if (arguments.length !== 2)
+    throw new Error('Exactly two arguments are required');
   return {
     id: uuid(),
     name,
-    age,
+    age
   };
 }
 
